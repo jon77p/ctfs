@@ -1,0 +1,56 @@
+version: "3.7"
+services:
+  bandit0:
+    build: .
+    image: bandit:level0
+    tty: true
+    environment:
+      - 'CTF_USER=bandit0'
+      - 'SSHPASS=bandit0'
+      - 'CTF_CMD=cat readme'
+
+  bandit1:
+    build: .
+    image: bandit:level1
+    tty: true
+    environment:
+      - 'CTF_USER=bandit1'
+      - 'SSHPASS=boJ9jbbUNNfktd78OOpsqOltutMc3MY1'
+      - 'CTF_CMD=cat ./-'
+
+  bandit2:
+    build: .
+    image: bandit:level2
+    tty: true
+    environment:
+      - 'CTF_USER=bandit2'
+      - 'SSHPASS=CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9'
+      - 'CTF_CMD=cat spaces\ in\ this\ filename'
+
+  bandit3:
+    build: .
+    image: bandit:level3
+    tty: true
+    environment:
+      - 'CTF_USER=bandit3'
+      - 'SSHPASS=UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK'
+      - 'CTF_CMD=cat inhere/.hidden'
+
+  bandit4:
+    build: .
+    image: bandit:level4
+    tty: true
+    environment:
+      - 'CTF_USER=bandit4'
+      - 'SSHPASS=pIwrPrtPN36QITSp3EQaw936yaFoFgAB'
+      - "CTF_CMD=cat \"$$(file inhere/* | grep text | grep 'inhere/-file[0-9]\\{2\\}' -o)\""
+
+  bandit5:
+    build: .
+    image: bandit:level5
+    tty: true
+    environment:
+      - 'CTF_USER=bandit5'
+      - 'SSHPASS=koReBOKuIDDepwhWk7jZC0RTdopnAYKh'
+      - 'CTF_CMD='
+
